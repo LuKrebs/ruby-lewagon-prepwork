@@ -40,7 +40,7 @@ puts "Ruby works pretty well with simple quotes or doble quotes"
 h = "RubyMonk".length
 puts h
 
-#working with string interpolation
+# string interpolation
 my_name = "Luciano Krebs"
 position = "Software Engineer"
 industry = "Tech"
@@ -101,3 +101,100 @@ puts capital_letters_sub
 match_string = 'RubyMonk Is Pretty Brilliant'.match(/ ./, 9)
 puts match_string
 
+# comparing two objects
+my_name = "Luciano"
+puts my_name == "Bob"
+
+age = 35
+puts age <= 35
+puts age == 40
+puts age >= 21
+puts age > 10
+puts age < 50
+
+# &&  ||
+true_or_false = (age >= 23) && (my_name == 'Bob' || my_name == "Jill")
+
+# ! ~> Negating expressions
+true_or_false_two = !(my_name == "Bob")
+
+def check_sign(number)
+  if number > 0
+    "#{number} is positive"
+  elsif number == 0
+    "#{number} is zero!"
+  else
+    "#{number} is negative"
+  end        
+end
+
+puts check_sign(10)
+puts check_sign(0)
+puts check_sign(-50)
+
+# unless
+age = 10
+unless age >= 18
+	puts "Sorry, you need at least 18 to drive a car. Grow up fast!"
+end
+
+# ternary operator
+def postive_or_not(number)
+	number > 0 ? "#{number} is positive" : "#{number} is negative"
+end
+puts postive_or_not(20)
+
+# only false and nil return false
+# every other object return true!
+if 0
+  puts "Hey, 0 is considered to be a truth in Ruby" 
+end
+
+
+# loop do
+my_loop = 7
+a = 0
+loop do
+	a = a + 1
+	puts "Luciano is a Software Engineer"
+	break if a == my_loop 
+end
+
+def ring(message, n)
+	n.times do
+		puts message
+	end
+end
+
+puts ""
+
+puts ring("Luciano is a Software Engineer", 5)
+
+# Arrays
+my_array = [1,2,3,4,5]
+puts "printing my array:"
+puts my_array
+
+# looking up data in arrays
+my_new_array = [1, 2, 3, 4, 5, 6, 7] 
+third_value = my_new_array[2]
+
+fifth_value = my_new_array[4]
+
+puts my_new_array
+puts "This is the third value ~> #{third_value}"
+puts "This is the fifth value ~> #{fifth_value}"
+
+# reverse lookup
+puts "Reverse lookup starts in -1 ~> the last element of the array"
+puts "Reverse lookup: [1, 2, 3, 4, 5][-5]"
+puts [1, 2, 3, 4, 5][-5]
+
+puts "Extracting the last element of the array ~> [1, 2, 3, 4, 5][-1]"
+puts [1, 2, 3, 4, 5][-1]
+
+puts ""
+my_append_array = [1, 2, 3, 4, 5] << "woot"
+puts my_append_array
+my_push_array = [1, 2, 3, 4, 5].push("woot")
+puts my_push_array
