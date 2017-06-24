@@ -222,3 +222,47 @@ end
 puts add(1.0134, -5.568)
 puts add(1.0134, -5.568, absolute: true)
 puts add(1.0134, -5.568, absolute: true, round: true, precision: 2)
+
+def add(*numbers)
+  numbers.inject(0) { |a, b| a + b }
+end
+def subtract(*numbers)
+  test = numbers.shift
+  x = numbers.inject(0){ |a, b| a + b }
+  x = - x
+  result = x + test
+  return result
+end
+def calculate(*arguments)
+  options = arguments[-1].is_a?(Hash) ? arguments.pop : {}
+  options[:add] = true if options.empty?
+  return add(*arguments) if options[:add]
+  return subtract(*arguments) if options[:subtract]
+end
+
+l = lambda { "Do or do not" }
+puts l.call
+
+l = lambda do |string|
+  if string == "try"
+    return "There's no such thing" 
+  else
+    return "Do or do not."
+  end
+end
+puts l.call("try") # Feel free to experiment with this
+
+Increment = lambda { |x| x + 1 } # your lambda between the braces
+Increment.call(1) 
+Increment.call(1000) 
+
+def demonstrate_block(number)
+  yield(number)
+end
+
+puts demonstrate_block(1) { |x| x + 1 }
+
+def calculate(*number)
+  yield(number)
+end
+

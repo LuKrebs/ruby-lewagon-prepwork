@@ -6,7 +6,7 @@ puts a
 # .next 
 # getting the number three
 b = 1.next.next
-puts b
+puts b # ~> 3
 
 # .methods
 # my_methods = 1.methods
@@ -19,7 +19,7 @@ puts b
 # .index 
 c = ['rock','paper','scissors'].index('paper')
 puts c # ~> 1
-# if the argument was not and index, so it'll return nill
+# if the argument was not an index, so it'll return nil
 
 # .between
 d = 2.between?(1,3)
@@ -198,3 +198,5 @@ my_append_array = [1, 2, 3, 4, 5] << "woot"
 puts my_append_array
 my_push_array = [1, 2, 3, 4, 5].push("woot")
 puts my_push_array
+
+p [].methods
